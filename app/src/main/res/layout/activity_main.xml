@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="intValue"
+            type="Integer" />
+        <variable
+            name="activity"
+            type="com.example.livedata.MainActivity" />
+    </data>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnRed"
+        android:text="Red"
+        android:textSize="30sp"
+        android:layout_margin="40dp"
+        android:onClick="@{()->activity.OnRedClick()}"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnBlue"
+        android:text="Blue"
+        android:textSize="30sp"
+        android:layout_margin="40dp"
+        android:layout_alignParentRight="true"
+        android:onClick="@{()->activity.OnBlueClick()"/>
+
+    <TextView
+        android:id="@+id/tvCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="120dp"
+        android:text="@{intValue.toString()}"
+        android:textAlignment="center"
+        android:textColor="@color/purple_200"
+        android:textSize="30sp"/>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:name="com.example.livedata.NewFragment"
+        android:id="@+id/fragment"/>
+
+</RelativeLayout>
+</layout>
